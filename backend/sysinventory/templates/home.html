@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Inventário de TI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a3950, #0f566d, #1987a2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            padding: 50px;
+            width: 520px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 17px;
+            color: #e6e6e6;
+            margin-bottom: 20px;
+        }
+
+        .links a {
+            display: block;
+            background: #ffffff;
+            color: #0a3950;
+            padding: 12px 18px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .links a:hover {
+            background: #d9ecff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #ddd;
+            opacity: 0.9;
+        }
+
+        .info-turma {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>📦Backend do Sistema de Inventário de TI</h1>
+    <p>Plataforma para gerenciamento de ativos, manutenção, licenças e histórico de uso de equipamentos.</p>
+
+    <div class="links">
+        <a href="/api/v1/">🚀 Endpoints da API</a>
+        <a href="/admin/">🔐 Painel Administrativo</a>
+        <a href="/admin/">🔐 Acesso ao Sistema</a>
+    </div>
+
+    <div class="info-turma">
+        <strong>Turma:</strong> TSI – 2024.1<br>
+        <strong>Alunos:</strong> Claudemyr Medeiros | Alexssandro
+    </div>
+
+    <div class="footer">
+        Projeto Integrador I — IFRN Parnamirim
+    </div>
+</div>
+
+</body>
+</html>

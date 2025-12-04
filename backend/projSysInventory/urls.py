@@ -1,22 +1,23 @@
-"""
-URL configuration for projSysInventory project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from sysinventory.api import viewsets as sysinventory_viewsets
+from sysinventory.views import home_page
+route = routers.DefaultRouter()
+
+route.register(r'empresas', sysinventory_viewsets.EmpresaViewSet)
+route.register(r'funcionarios', sysinventory_viewsets.FuncionarioViewSet)
+route.register(r'equipamentos', sysinventory_viewsets.EquipamentoViewSet)
+route.register(r'manutencoes', sysinventory_viewsets.ManutencaoViewSet)
+route.register(r'licencas-software', sysinventory_viewsets.LicencaSoftwareViewSet)
+route.register(r'historico-uso', sysinventory_viewsets.HistoricoUsoViewSet)
+route.register(r'setores', sysinventory_viewsets.SetorViewSet)
+route.register(r'status-equipamento', sysinventory_viewsets.StatusEquipamentoViewSet)
+route.register(r'softwares', sysinventory_viewsets.SoftwareViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/', include(route.urls)),
+    path('', home_page, name='home'),
 ]
